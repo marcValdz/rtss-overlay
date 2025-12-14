@@ -1,0 +1,784 @@
+[Master]
+Implementation=2
+FontFace=Bahnschrift Light SemiCondensed
+FontHeight=-13
+FontWeight=300
+ZoomRatio=2
+[Settings]
+Name=
+EnvVars=PM_RefreshPeriod=33;PM_DisplayDelay=3000;PM_UseTimeScale=1;PM_AveragingWindow=66
+RefreshPeriod=1000
+LockUserSettings=0
+EmbeddedImage=
+PingAddr=
+[General]
+Sources=32
+Tables=0
+Layers=51
+[Source0]
+Name=CPU temperature
+Units=°C
+Format=
+Formula=
+Provider=HAL
+ID=CPU temperature
+[Source1]
+Name=CPU clock
+Units=MHz
+Format=
+Formula=
+Provider=HAL
+ID=CPU clock
+[Source2]
+Name=CPU power
+Units=W
+Format=
+Formula=
+Provider=HAL
+ID=CPU power
+[Source3]
+Name=CPU usage
+Units=%
+Format=
+Formula=
+Provider=HAL
+ID=CPU usage
+[Source4]
+Name=CPU usage max
+Units=%
+Format=
+Formula=
+Provider=HAL
+ID=CPU usage max
+[Source5]
+Name=Total RAM
+Units=GB
+Format=
+Formula=x/1024
+Provider=HAL
+ID=Total RAM
+[Source6]
+Name=RAM usage
+Units=GB
+Format=%.1f
+Formula=x/1024
+Provider=HAL
+ID=RAM usage
+[Source7]
+Name=RAM usage percent
+Units=%
+Format=
+Formula=
+Provider=HAL
+ID=RAM usage percent
+[Source8]
+Name=RAM usage \ process
+Units=MB
+Format=
+Formula=
+Provider=HAL
+ID=RAM usage \ process
+[Source9]
+Name=RAM usage percent \ process
+Units=%
+Format=
+Formula=
+Provider=HAL
+ID=RAM usage percent \ process
+[Source10]
+Name=Commit charge
+Units=MB
+Format=
+Formula=
+Provider=HAL
+ID=Commit charge
+[Source11]
+Name=GPU1 temperature
+Units=°C
+Format=
+Formula=
+Provider=HAL
+ID=GPU1 temperature
+[Source12]
+Name=GPU1 clock
+Units=MHz
+Format=
+Formula=
+Provider=HAL
+ID=GPU1 clock
+[Source13]
+Name=GPU1 power
+Units=W
+Format=
+Formula=
+Provider=HAL
+ID=GPU1 power
+[Source14]
+Name=GPU1 usage
+Units=%
+Format=
+Formula=
+Provider=HAL
+ID=GPU1 usage
+[Source15]
+Name=GPU1 total memory
+Units=GB
+Format=
+Formula=x/1024
+Provider=HAL
+ID=GPU1 total memory
+[Source16]
+Name=GPU1 memory usage
+Units=GB
+Format=%.1f
+Formula=x/1024
+Provider=HAL
+ID=GPU1 memory usage
+[Source17]
+Name=GPU1 memory usage percent
+Units=%
+Format=
+Formula=
+Provider=HAL
+ID=GPU1 memory usage percent
+[Source18]
+Name=GPU1 memory usage \ process
+Units=MB
+Format=
+Formula=
+Provider=HAL
+ID=GPU1 memory usage \ process
+[Source19]
+Name=GPU1 memory usage percent \ process
+Units=%
+Format=
+Formula=
+Provider=HAL
+ID=GPU1 memory usage percent \ process
+[Source20]
+Name=msBetweenPresents
+Units=ms
+Format=%.1f
+Formula=
+Provider=PresentMon
+ID=msBetweenPresents
+[Source21]
+Name=msGpuActive
+Units=ms
+Format=%.1f
+Formula=
+Provider=PresentMon
+ID=msGpuActive
+[Source22]
+Name=msReportingLag
+Units=ms
+Format=%.1f
+Formula=
+Provider=PresentMon
+ID=msReportingLag
+[Source23]
+Name=msInputLatency
+Units=ms
+Format=%.1f
+Formula=
+Provider=PresentMon
+ID=msInputLatency
+[Source24]
+Name=IsPresentMonDataAvailable
+Units=
+Format=
+Formula=validate(x)
+Provider=PresentMon
+ID=msBetweenPresents
+[Source25]
+Name=FrameratePresented
+Units=FPS
+Format=
+Formula=
+Provider=PresentMon
+ID=FrameratePresented
+[Source26]
+Name=FrameratePresentedInst
+Units=FPS
+Format=
+Formula=1000/x
+Provider=PresentMon
+ID=msBetweenPresents
+[Source27]
+Name=IsGpuLimited
+Units=
+Format=
+Formula=(msGpuActive / msBetweenPresents) >= 0.75
+Provider=HAL
+ID=Stub
+[Source28]
+Name=FrameratePresented1Dot0PLow
+Units=FPS
+Format=
+Formula=1000/percentile(msBetweenPresents,99)
+Provider=HAL
+ID=Stub
+[Source29]
+Name=FrameratePresented0Dot1PLow
+Units=FPS
+Format=
+Formula=1000/percentile(msBetweenPresents,99.9)
+Provider=HAL
+ID=Stub
+[Source30]
+Name=PresentMode
+Units=
+Format=
+Formula=
+Provider=PresentMon
+ID=PresentMode
+[Source31]
+Name=Status
+Units=
+Format=
+Formula=
+Provider=PresentMon
+ID=Status
+[Layer0]
+Name=Colors
+Text=<C20=FF8080><C20><C21=50FF8080><C21>         <C22=8000FF><C22><C23=508000FF><C23>          <C24=008000><C24><C25=50008000><C25>
+PositionX=0
+PositionY=-2
+ExtentX=-5
+ExtentY=-1
+ExtentOrigin=0
+FixedAlignment=1
+[Layer1]
+Name=RTSS frametime graph fill
+Text=<C21><G=Frametime,0,0,1,0,50,1><C21>
+PositionX=0
+PositionY=0
+ExtentX=-33
+ExtentY=-2
+ExtentOrigin=0
+[Layer2]
+Name=RTSS frametime graph
+Text=<C20><G=Frametime,0,0,1,0,50,0><C20>
+PositionX=0
+PositionY=0
+ExtentX=-33
+ExtentY=-2
+ExtentOrigin=0
+[Layer3]
+Name=Background
+Text=
+PositionX=0
+PositionY=0
+ExtentX=-86
+ExtentY=-2
+ExtentOrigin=4
+FixedAlignment=1
+BgndColor=80000000
+[Layer4]
+Name=API / Architecture
+Text=<API> <ARCH>
+PositionX=0
+PositionY=0
+ExtentX=-8
+ExtentY=-1
+ExtentOrigin=0
+FixedAlignment=1
+TextColor=FFFFFF
+MarginLeft=2
+[Layer5]
+Name=Driver
+Text=%Driver%
+PositionX=0
+PositionY=-1
+ExtentX=-8
+ExtentY=-1
+ExtentOrigin=0
+FixedAlignment=1
+Size=50
+TextColor=FFFFFF
+MarginLeft=2
+[Layer6]
+Name=Framerate
+Text=<C20>%Framerate%<C20>
+PositionX=-22
+PositionY=0
+ExtentX=-7
+ExtentY=-2
+ExtentOrigin=2
+FixedAlignment=1
+Size=200
+[Layer7]
+Name=Framerate Label
+Text=FPS
+PositionX=-29
+PositionY=0
+ExtentX=-4
+ExtentY=-1
+ExtentOrigin=6
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer8]
+Name=Frametime
+Text=<C20>%Frametime% <S=50>ms<S><C20>
+PositionX=-29
+PositionY=-1
+ExtentX=-4
+ExtentY=-1
+ExtentOrigin=0
+FixedAlignment=1
+Size=75
+MarginLeft=2
+[Layer9]
+Name=CPU name
+Text=<C22>%CPUShort%<C22>
+PositionX=-34
+PositionY=0
+ExtentX=-10
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer10]
+Name=CPU clock
+Text=%CPU clock%
+PositionX=-45
+PositionY=0
+ExtentX=-4
+ExtentY=-1
+ExtentOrigin=2
+FixedAlignment=1
+[Layer11]
+Name=CPU clock units
+Text=MHz
+PositionX=-49
+PositionY=0
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer12]
+Name=CPU usage
+Text=<C22>%CPU usage%<C22>
+PositionX=-52
+PositionY=0
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer13]
+Name=CPU usage units
+Text=%
+PositionX=-55
+PositionY=0
+ExtentX=-2
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer14]
+Name=CPU temperature
+Text=<C22>%CPU temperature%<C22>
+PositionX=-57
+PositionY=0
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer15]
+Name=CPU temperature units
+Text=°C
+PositionX=-60
+PositionY=0
+ExtentX=-2
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer16]
+Name=CPU power
+Text=<C22>%CPU power%<C22>
+PositionX=-62
+PositionY=0
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer17]
+Name=CPU power units
+Text=W
+PositionX=-65
+PositionY=0
+ExtentX=-2
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer18]
+Name=RAM usage \ process
+Text=<C22>%RAM usage \ process%<C22>
+PositionX=-67
+PositionY=0
+ExtentX=-4
+ExtentY=-1
+ExtentOrigin=2
+FixedAlignment=1
+[Layer19]
+Name=RAM usage units \ process
+Text=Process MB
+PositionX=-71
+PositionY=0
+ExtentX=-7
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer20]
+Name=RAM usage
+Text=<C22>%RAM usage%<C22>
+PositionX=-78
+PositionY=0
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=2
+FixedAlignment=1
+[Layer21]
+Name=RAM usage units
+Text=of %Total RAM%GB
+PositionX=-81
+PositionY=0
+ExtentX=-5
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer22]
+Name=GPU name
+Text=<C24>%GPU%<C24>
+PositionX=-34
+PositionY=-1
+ExtentX=-10
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer23]
+Name=GPU clock
+Text=<C24>%GPU1 clock%<C24>
+PositionX=-45
+PositionY=-1
+ExtentX=-4
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer24]
+Name=GPU clock units
+Text=MHz
+PositionX=-49
+PositionY=-1
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer25]
+Name=GPU usage
+Text=<C24>%GPU1 usage%<C24>
+PositionX=-52
+PositionY=-1
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer26]
+Name=GPU usage units
+Text=%
+PositionX=-55
+PositionY=-1
+ExtentX=-2
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer27]
+Name=GPU temperature
+Text=<C24>%GPU1 temperature%<C24>
+PositionX=-57
+PositionY=-1
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer28]
+Name=GPU temperature units
+Text=°C
+PositionX=-60
+PositionY=-1
+ExtentX=-2
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer29]
+Name=GPU power
+Text=<C24>%GPU1 power%<C24>
+PositionX=-62
+PositionY=-1
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer30]
+Name=GPU power units
+Text=W
+PositionX=-65
+PositionY=-1
+ExtentX=-2
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer31]
+Name=GPU memory usage \ process
+Text=<C24>%GPU1 memory usage \ process%<C24>
+PositionX=-67
+PositionY=-1
+ExtentX=-4
+ExtentY=-1
+ExtentOrigin=5
+FixedAlignment=1
+[Layer32]
+Name=GPU memory usage units \ process
+Text=Process MB
+PositionX=-71
+PositionY=-1
+ExtentX=-7
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer33]
+Name=GPU memory usage
+Text=<C24>%GPU1 memory usage%<C24>
+PositionX=-78
+PositionY=-1
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=2
+FixedAlignment=1
+[Layer34]
+Name=GPU memory units
+Text=of %GPU1 total memory%GB
+PositionX=-81
+PositionY=-1
+ExtentX=-5
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer35]
+Name=PresentMon frametime graph
+VisibilitySource=IsPresentMonDataAvailable
+Text=<C22><G=msBetweenPresents,0,0,1,0,50,0><C22>
+PositionX=-87
+PositionY=0
+ExtentX=-33
+ExtentY=-2
+ExtentOrigin=0
+[Layer36]
+Name=PresentMon frametime graph fill
+VisibilitySource=IsPresentMonDataAvailable
+Text=<C23><G=msBetweenPresents,0,0,1,0,50,1><C23>
+PositionX=-87
+PositionY=0
+ExtentX=-33
+ExtentY=-2
+ExtentOrigin=0
+[Layer37]
+Name=PresentMon GPU busy graph
+VisibilitySource=IsPresentMonDataAvailable
+Text=<C24><G=msGpuActive,0,0,1,0,50,0><C24>
+PositionX=-87
+PositionY=0
+ExtentX=-33
+ExtentY=-2
+ExtentOrigin=0
+[Layer38]
+Name=PresentMon GPU busy graph fill
+VisibilitySource=IsPresentMonDataAvailable
+Text=<C25><G=msGpuActive,0,0,1,0,50,1><C25>
+PositionX=-87
+PositionY=0
+ExtentX=-33
+ExtentY=-2
+ExtentOrigin=0
+[Layer39]
+Name=Status
+Text=<SWITCH Status><CASE 0><IF !IsPresentMonDataAvailable>Waiting for PresentMon data stream...<IF><CASE 1>PresentMon service is not available...<CASE 2>Failed to start PresentMon data stream...<CASE 3>PresentMon data stream failed...
+PositionX=-86
+PositionY=0
+ExtentX=-55
+ExtentY=-2
+ExtentOrigin=4
+TextColor=FFFFFF
+BgndColor=80000000
+[Layer40]
+Name=Limited by label
+VisibilitySource=IsPresentMonDataAvailable
+Text=Limited by
+PositionX=-87
+PositionY=0
+ExtentX=-6
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer41]
+Name=Limited by
+VisibilitySource=IsPresentMonDataAvailable
+Text=<IF IsGpuLimited><C24>GPU<C24><ELSE><C22>CPU<C22>
+PositionX=-93
+PositionY=0
+ExtentX=-3
+ExtentY=-1
+ExtentOrigin=3
+Size=75
+MarginLeft=2
+[Layer42]
+Name=PresentMode
+VisibilitySource=IsPresentMonDataAvailable
+Text=<SWITCH PresentMode><CASE 1>Hw : legacy flip<CASE 2>Hw : legacy copy<CASE 3>Hw : independent flip<CASE 4>Composed : flip<CASE 5>Composed : GPU copy<CASE 6>Composed : CPU copy<CASE 8>Hw composed : independent flip\r\n
+PositionX=-96
+PositionY=0
+ExtentX=-18
+ExtentY=-1
+ExtentOrigin=4
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+[Layer43]
+Name=PresentMon frametime
+VisibilitySource=IsPresentMonDataAvailable
+Text=<C22>%msBetweenPresents% <S=50>ms<S><C22>
+PositionX=-114
+PositionY=0
+ExtentX=-6
+ExtentY=-1
+ExtentOrigin=5
+Size=75
+RefreshPeriod=500
+MarginRight=2
+[Layer44]
+Name=PresentMon frametime label
+VisibilitySource=IsPresentMonDataAvailable
+Text=CPU Busy
+PositionX=-120
+PositionY=0
+ExtentX=-6
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer45]
+Name=PresentMon GPU busy
+VisibilitySource=IsPresentMonDataAvailable
+Text=<C24>%msGpuActive% <S=50>ms<S><C24>
+PositionX=-114
+PositionY=-1
+ExtentX=-6
+ExtentY=-1
+ExtentOrigin=5
+Size=75
+RefreshPeriod=500
+MarginRight=2
+[Layer46]
+Name=GPU busy label
+VisibilitySource=IsPresentMonDataAvailable
+Text=GPU Busy
+PositionX=-120
+PositionY=-1
+ExtentX=-6
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer47]
+Name=PresentMon application latency
+VisibilitySource=IsPresentMonDataAvailable
+Text=%msInputLatency% <S=50>ms<S>
+PositionX=-126
+PositionY=0
+ExtentX=-6
+ExtentY=-1
+ExtentOrigin=5
+Size=75
+TextColor=FFFFFF
+RefreshPeriod=500
+[Layer48]
+Name=Input latency label
+VisibilitySource=IsPresentMonDataAvailable
+Text=Input Latency
+PositionX=-132
+PositionY=0
+ExtentX=-9
+ExtentY=-1
+ExtentOrigin=3
+FixedAlignment=1
+Size=75
+TextColor=FFFFFF
+MarginLeft=2
+[Layer49]
+Name=PresentMon reporting lag
+VisibilitySource=IsPresentMonDataAvailable
+Text=%msReportingLag% <S=50>ms<S>
+PositionX=-126
+PositionY=-1
+ExtentX=-6
+ExtentY=-1
+ExtentOrigin=5
+Size=75
+TextColor=FFFFFF
+RefreshPeriod=500
+[Layer50]
+Name=PresentMon reporting lag label
+VisibilitySource=IsPresentMonDataAvailable
+Text=Reporting Lag
+PositionX=-132
+PositionY=-1
+ExtentX=-9
+ExtentY=-1
+ExtentOrigin=3
+Size=75
+TextColor=FFFFFF
+RefreshPeriod=500
+MarginLeft=2
