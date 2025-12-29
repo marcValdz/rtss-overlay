@@ -248,7 +248,7 @@ Provider=PresentMon
 ID=Status
 [Layer0]
 Name=Colors
-Text=<C20=FF8080><C20><C21=50FF8080><C21>         <C22=8000FF><C22><C23=508000FF><C23>          <C24=008000><C24><C25=50008000><C25>
+Text=<C20=00D953><C20><C21=5000D953><C21>         <C22=FD6421><C22><C23=50FD6421><C23>          <C24=B033B5><C24><C25=50B033B5><C25>
 PositionX=0
 PositionY=-2
 ExtentX=-5
