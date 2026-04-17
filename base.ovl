@@ -12,7 +12,7 @@ LockUserSettings=0
 EmbeddedImage=
 PingAddr=
 [General]
-Sources=32
+Sources=33
 Tables=0
 Layers=51
 [Source0]
@@ -107,132 +107,139 @@ Formula=
 Provider=HAL
 ID=GPU1 clock
 [Source13]
+Name=GPU1 effective clock
+Units=MHz
+Format=
+Formula=
+Provider=HAL
+ID=GPU1 effective clock
+[Source14]
 Name=GPU1 power
 Units=W
 Format=
 Formula=
 Provider=HAL
 ID=GPU1 power
-[Source14]
+[Source15]
 Name=GPU1 usage
 Units=%
 Format=
 Formula=
 Provider=HAL
 ID=GPU1 usage
-[Source15]
+[Source16]
 Name=GPU1 total memory
 Units=GB
 Format=
 Formula=x/1024
 Provider=HAL
 ID=GPU1 total memory
-[Source16]
+[Source17]
 Name=GPU1 memory usage
 Units=GB
 Format=%.1f
 Formula=x/1024
 Provider=HAL
 ID=GPU1 memory usage
-[Source17]
+[Source18]
 Name=GPU1 memory usage percent
 Units=%
 Format=
 Formula=
 Provider=HAL
 ID=GPU1 memory usage percent
-[Source18]
+[Source19]
 Name=GPU1 memory usage \ process
 Units=MB
 Format=
 Formula=
 Provider=HAL
 ID=GPU1 memory usage \ process
-[Source19]
+[Source20]
 Name=GPU1 memory usage percent \ process
 Units=%
 Format=
 Formula=
 Provider=HAL
 ID=GPU1 memory usage percent \ process
-[Source20]
+[Source21]
 Name=msBetweenPresents
 Units=ms
 Format=%.1f
 Formula=
 Provider=PresentMon
 ID=msBetweenPresents
-[Source21]
+[Source22]
 Name=msGpuActive
 Units=ms
 Format=%.1f
 Formula=
 Provider=PresentMon
 ID=msGpuActive
-[Source22]
+[Source23]
 Name=msReportingLag
 Units=ms
 Format=%.1f
 Formula=
 Provider=PresentMon
 ID=msReportingLag
-[Source23]
+[Source24]
 Name=msInputLatency
 Units=ms
 Format=%.1f
 Formula=
 Provider=PresentMon
 ID=msInputLatency
-[Source24]
+[Source25]
 Name=IsPresentMonDataAvailable
 Units=
 Format=
 Formula=validate(x)
 Provider=PresentMon
 ID=msBetweenPresents
-[Source25]
+[Source26]
 Name=FrameratePresented
 Units=FPS
 Format=
 Formula=
 Provider=PresentMon
 ID=FrameratePresented
-[Source26]
+[Source27]
 Name=FrameratePresentedInst
 Units=FPS
 Format=
 Formula=1000/x
 Provider=PresentMon
 ID=msBetweenPresents
-[Source27]
+[Source28]
 Name=IsGpuLimited
 Units=
 Format=
 Formula=(msGpuActive / msBetweenPresents) >= 0.75
 Provider=HAL
 ID=Stub
-[Source28]
+[Source29]
 Name=FrameratePresented1Dot0PLow
 Units=FPS
 Format=
 Formula=1000/percentile(msBetweenPresents,99)
 Provider=HAL
 ID=Stub
-[Source29]
+[Source30]
 Name=FrameratePresented0Dot1PLow
 Units=FPS
 Format=
 Formula=1000/percentile(msBetweenPresents,99.9)
 Provider=HAL
 ID=Stub
-[Source30]
+[Source31]
 Name=PresentMode
 Units=
 Format=
 Formula=
 Provider=PresentMon
 ID=PresentMode
-[Source31]
+[Source32]
 Name=Status
 Units=
 Format=
@@ -476,7 +483,7 @@ ExtentOrigin=5
 FixedAlignment=1
 [Layer23]
 Name=GPU clock
-Text=<C24>%GPU1 clock%<C24>
+Text=<C24>%GPU1 effective clock%<C24>
 PositionX=-45
 PositionY=-1
 ExtentX=-4
@@ -652,35 +659,35 @@ VisibilitySource=IsPresentMonDataAvailable
 Text=Limited by
 PositionX=-87
 PositionY=0
-ExtentX=-6
+ExtentX=-4
 ExtentY=-1
 ExtentOrigin=3
 FixedAlignment=1
-Size=75
+Size=50
 TextColor=FFFFFF
 MarginLeft=2
 [Layer41]
 Name=Limited by
 VisibilitySource=IsPresentMonDataAvailable
 Text=<IF IsGpuLimited><C24>GPU<C24><ELSE><C22>CPU<C22>
-PositionX=-93
+PositionX=-91
 PositionY=0
-ExtentX=-3
+ExtentX=-2
 ExtentY=-1
 ExtentOrigin=3
-Size=75
+Size=50
 MarginLeft=2
 [Layer42]
 Name=PresentMode
 VisibilitySource=IsPresentMonDataAvailable
-Text=<SWITCH PresentMode><CASE 1>Hw : legacy flip<CASE 2>Hw : legacy copy<CASE 3>Hw : independent flip<CASE 4>Composed : flip<CASE 5>Composed : GPU copy<CASE 6>Composed : CPU copy<CASE 8>Hw composed : independent flip\r\n
-PositionX=-96
+Text=<SWITCH PresentMode><CASE 1>Hw : legacy flip<CASE 2>Hw : legacy copy<CASE 3>Hw : independent flip<CASE 4>Composed : flip<CASE 5>Composed : GPU copy<CASE 6>Composed : CPU copy<CASE 8>Hw composed : independent flip
+PositionX=-93
 PositionY=0
-ExtentX=-18
+ExtentX=-21
 ExtentY=-1
 ExtentOrigin=4
 FixedAlignment=1
-Size=75
+Size=50
 TextColor=FFFFFF
 [Layer43]
 Name=PresentMon frametime
